@@ -44,7 +44,8 @@ namespace AddressBook
 
         public override string? ToString()
         {
-            return base.ToString();
+            return $"FirstName :- {firstName} , LastName :- {lastName} ,PhoneNumber :- {phoneNumber} ,Email :- {email} ,Address :- {address} ," +
+                $"City :- {city} ,State :- {state} ,ZipCode :- {zipCode} ,Country :- {country} ,";
         }
     }
 }
