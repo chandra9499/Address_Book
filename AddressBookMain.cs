@@ -8,25 +8,39 @@ namespace AddressBook
 {
     public class AddressBookMain
     {
-        static void Main(string[] args)
+        public static void createAddressBookAccount() 
         {
             AddressBook addressBook = new AddressBookImplimentation();
-            while (true) {
+            Console.WriteLine("wlecome to address book");
+            while (true)
+            {
 
                 Console.WriteLine("enter the choice..");
-                Console.WriteLine("1.add \n 2.all\n3.break");
-
+                Console.WriteLine("1.add \n2.remove \n3.update \n4. logout \n5. allpersonrecord");
+                string name = string.Empty;
                 int choice = int.Parse(Console.ReadLine());
-                if (choice == 3)
+                if (choice == 4)
                 {
                     break;
                 }
                 switch (choice)
                 {
                     case 1:
+                        Console.WriteLine("");
                         addressBook.addContact();
                         break;
                     case 2:
+                        Console.WriteLine("enter the your first name : - ");
+                        name = Console.ReadLine();
+                        addressBook.removeContact(name);
+                        break;
+                    case 3:
+                        Console.WriteLine("enter the your first name");
+                        name = Console.ReadLine();
+                        addressBook.updateContact(name);
+                        break;
+                    case 5:
+                       
                         addressBook.allPersonInAddressBook();
                         break;
                     default:
@@ -36,6 +50,10 @@ namespace AddressBook
                 }
 
             }
+        }
+        static void Main(string[] args)
+        {
+            createAddressBookAccount();
         }
     }
 }
